@@ -20,8 +20,8 @@ BuildRequires:	pkgconfig >= 1:0.22
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires(post,postun):	desktop-file-utils
-Provides:	gnome-utils-font-viewer
-Obsoletes:	gnome-utils-font-viewer
+Provides:	gnome-utils-font-viewer = %{version}-%{release}
+Obsoletes:	gnome-utils-font-viewer < 3.3.92-1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
