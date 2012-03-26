@@ -1,18 +1,18 @@
 Summary:	Font viewer
 Summary(pl.UTF-8):	Przeglądarka czcionek
 Name:		gnome-font-viewer
-Version:	3.3.92
+Version:	3.4.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-font-viewer/3.3/%{name}-%{version}.tar.xz
-# Source0-md5:	f0b522cf4e1b3fd3b01362976d2fa8b1
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-font-viewer/3.4/%{name}-%{version}.tar.xz
+# Source0-md5:	f21c9174c263bf0928d82ddf01d4e6a5
 URL:		http://live.gnome.org/GnomeUtils
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	freetype-devel
 BuildRequires:	gettext-devel >= 0.17
-BuildRequires:	glib2-devel >= 1:2.31.0
+BuildRequires:	glib2-devel >= 1:2.32.0
 BuildRequires:	gtk+3-devel >= 3.0.0
 BuildRequires:	intltool >= 0.40.0
 BuildRequires:	libtool >= 2:2.2.6
