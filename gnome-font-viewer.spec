@@ -11,7 +11,7 @@ URL:		http://live.gnome.org/GnomeUtils
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	freetype-devel
-BuildRequires:	gettext-devel >= 0.17
+BuildRequires:	gettext-tools >= 0.17
 BuildRequires:	glib2-devel >= 1:2.35.1
 BuildRequires:	gnome-desktop-devel
 BuildRequires:	gtk+3-devel >= 3.12.0
