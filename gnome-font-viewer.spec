@@ -1,15 +1,13 @@
 Summary:	Font viewer
 Summary(pl.UTF-8):	Przeglądarka czcionek
 Name:		gnome-font-viewer
-Version:	3.24.0
+Version:	3.28.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-font-viewer/3.24/%{name}-%{version}.tar.xz
-# Source0-md5:	c7434e3fb7cd3cfbdc7073d3bf11b6b5
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-font-viewer/3.28/%{name}-%{version}.tar.xz
+# Source0-md5:	1bfe7dcc475526ceb4a7319677408a4a
 URL:		http://live.gnome.org/GnomeUtils
-BuildRequires:	autoconf >= 2.63
-BuildRequires:	automake >= 1:1.11
 BuildRequires:	fontconfig-devel
 BuildRequires:	freetype-devel >= 2
 BuildRequires:	gettext-tools >= 0.17
@@ -17,8 +15,7 @@ BuildRequires:	glib2-devel >= 1:2.35.1
 BuildRequires:	gnome-desktop-devel >= 3.0
 BuildRequires:	gtk+3-devel >= 3.20.0
 BuildRequires:	harfbuzz-devel >= 0.9.9
-BuildRequires:	intltool >= 0.40.0
-BuildRequires:	libtool >= 2:2.2.6
+BuildRequires:	meson >= 0.40.1
 BuildRequires:	pkgconfig >= 1:0.22
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -40,21 +37,13 @@ Ten pakiet dostarcza przeglądarkę czcionek.
 %setup -q
 
 %build
-%{__libtoolize}
-%{__intltoolize}
-%{__aclocal} -I m4
-%{__autoheader}
-%{__autoconf}
-%{__automake}
-%configure \
-	--disable-silent-rules
-%{__make}
+%meson build
+%meson_build -C build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+%meson_install -C build
 
 %find_lang %{name}
 
@@ -73,6 +62,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/gnome-font-viewer
 %attr(755,root,root) %{_bindir}/gnome-thumbnail-font
 %{_desktopdir}/org.gnome.font-viewer.desktop
-%{_datadir}/appdata/org.gnome.font-viewer.appdata.xml
+%{_datadir}/metainfo/org.gnome.font-viewer.appdata.xml
 %{_datadir}/dbus-1/services/org.gnome.font-viewer.service
 %{_datadir}/thumbnailers/gnome-font-viewer.thumbnailer
