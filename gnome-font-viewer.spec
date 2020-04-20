@@ -2,7 +2,7 @@ Summary:	Font viewer
 Summary(pl.UTF-8):	Przeglądarka czcionek
 Name:		gnome-font-viewer
 Version:	3.34.0
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-font-viewer/3.34/%{name}-%{version}.tar.xz
