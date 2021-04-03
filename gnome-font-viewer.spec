@@ -1,20 +1,21 @@
 Summary:	Font viewer
 Summary(pl.UTF-8):	Przeglądarka czcionek
 Name:		gnome-font-viewer
-Version:	3.34.0
-Release:	2
+Version:	40.0
+Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-font-viewer/3.34/%{name}-%{version}.tar.xz
-# Source0-md5:	76004a8986ea622b09c408b01a6f42e5
+Source0:	https://download.gnome.org/sources/gnome-font-viewer/40/%{name}-%{version}.tar.xz
+# Source0-md5:	8b613859c349436cf8720cf89179c507
 URL:		https://wiki.gnome.org/Attic/GnomeUtils
 BuildRequires:	fontconfig-devel
 BuildRequires:	freetype-devel >= 2
 BuildRequires:	gettext-tools >= 0.17
-BuildRequires:	glib2-devel >= 1:2.35.1
+BuildRequires:	glib2-devel >= 1:2.56.0
 BuildRequires:	gnome-desktop-devel >= 3.0
-BuildRequires:	gtk+3-devel >= 3.20.0
+BuildRequires:	gtk+3-devel >= 3.24.1
 BuildRequires:	harfbuzz-devel >= 0.9.9
+BuildRequires:	libhandy1-devel >= 1.0.0
 BuildRequires:	meson >= 0.50.0
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig >= 1:0.22
@@ -22,9 +23,11 @@ BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires(post,postun):	desktop-file-utils
-Requires:	glib2 >= 1:2.35.1
-Requires:	gtk+3 >= 3.20.0
+Requires(post,postun):	gtk-update-icon-cache
+Requires:	glib2 >= 1:2.56.0
+Requires:	gtk+3 >= 3.24.1
 Requires:	harfbuzz >= 0.9.9
+Requires:	libhandy1 >= 1.0.0
 Provides:	gnome-utils-font-viewer = 1:%{version}-%{release}
 Obsoletes:	gnome-utils-font-viewer < 1:3.3.92-1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -55,9 +58,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 %update_desktop_database_post
+%update_icon_cache hicolor
 
 %postun
 %update_desktop_database_postun
+%update_icon_cache hicolor
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
