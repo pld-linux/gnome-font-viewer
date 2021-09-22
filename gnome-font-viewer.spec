@@ -1,12 +1,12 @@
 Summary:	Font viewer
 Summary(pl.UTF-8):	Przeglądarka czcionek
 Name:		gnome-font-viewer
-Version:	40.0
+Version:	41.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-font-viewer/40/%{name}-%{version}.tar.xz
-# Source0-md5:	8b613859c349436cf8720cf89179c507
+Source0:	https://download.gnome.org/sources/gnome-font-viewer/41/%{name}-%{version}.tar.xz
+# Source0-md5:	ff7fa68a5e870fffed2ab10d993a1bb2
 URL:		https://wiki.gnome.org/Attic/GnomeUtils
 BuildRequires:	fontconfig-devel
 BuildRequires:	freetype-devel >= 2
