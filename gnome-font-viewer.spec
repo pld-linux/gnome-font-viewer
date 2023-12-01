@@ -2,12 +2,12 @@
 Summary:	Font viewer
 Summary(pl.UTF-8):	Przeglądarka czcionek
 Name:		gnome-font-viewer
-Version:	44.0
+Version:	45.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-font-viewer/44/%{name}-%{version}.tar.xz
-# Source0-md5:	40bc110144ea80578fe14b1e5487d25e
+Source0:	https://download.gnome.org/sources/gnome-font-viewer/45/%{name}-%{version}.tar.xz
+# Source0-md5:	eb5b0acf88a05bdfe2fa1c3f817c5243
 URL:		https://wiki.gnome.org/Attic/GnomeUtils
 BuildRequires:	fontconfig-devel
 BuildRequires:	freetype-devel >= 2
@@ -17,7 +17,7 @@ BuildRequires:	glib2-devel >= 1:2.56.0
 BuildRequires:	gnome-desktop4-devel >= 42
 BuildRequires:	gtk4-devel >= 4.5.0
 BuildRequires:	harfbuzz-devel >= 0.9.9
-BuildRequires:	libadwaita-devel >= 1.2
+BuildRequires:	libadwaita-devel >= 1.4
 BuildRequires:	meson >= 0.50.0
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig >= 1:0.22
@@ -29,7 +29,7 @@ Requires(post,postun):	gtk-update-icon-cache
 Requires:	glib2 >= 1:2.56.0
 Requires:	gtk4 >= 4.5.0
 Requires:	harfbuzz >= 0.9.9
-Requires:	libadwaita >= 1.2
+Requires:	libadwaita >= 1.4
 Provides:	gnome-utils-font-viewer = 1:%{version}-%{release}
 Obsoletes:	gnome-utils-font-viewer < 1:3.3.92-1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
