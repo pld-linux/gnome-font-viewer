@@ -2,12 +2,12 @@
 Summary:	Font viewer
 Summary(pl.UTF-8):	Przeglądarka czcionek
 Name:		gnome-font-viewer
-Version:	47.0
+Version:	48.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-font-viewer/47/%{name}-%{version}.tar.xz
-# Source0-md5:	d11474ea4cdb024125217becef3abc50
+Source0:	https://download.gnome.org/sources/gnome-font-viewer/48/%{name}-%{version}.tar.xz
+# Source0-md5:	eb550480c47fb2c7399b1b628baf6a91
 URL:		https://apps.gnome.org/FontViewer/
 BuildRequires:	fontconfig-devel
 BuildRequires:	freetype-devel >= 2
@@ -21,7 +21,7 @@ BuildRequires:	libadwaita-devel >= 1.5
 BuildRequires:	meson >= 0.50.0
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig >= 1:0.22
-BuildRequires:	rpmbuild(macros) >= 1.736
+BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires(post,postun):	desktop-file-utils
@@ -44,14 +44,14 @@ Ten pakiet dostarcza przeglądarkę czcionek.
 %setup -q
 
 %build
-%meson build
+%meson
 
-%ninja_build -C build
+%meson_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%ninja_install -C build
+%meson_install
 
 # not supported by glibc (as of 2.37)
 %{__rm} -r $RPM_BUILD_ROOT%{_localedir}/ie
