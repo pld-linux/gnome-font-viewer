@@ -2,12 +2,12 @@
 Summary:	Font viewer
 Summary(pl.UTF-8):	Przeglądarka czcionek
 Name:		gnome-font-viewer
-Version:	48.0
+Version:	50.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-font-viewer/48/%{name}-%{version}.tar.xz
-# Source0-md5:	eb550480c47fb2c7399b1b628baf6a91
+Source0:	https://download.gnome.org/sources/gnome-font-viewer/50/%{name}-%{version}.tar.xz
+# Source0-md5:	7939a4f30bee74b99db7aef21d08df82
 URL:		https://apps.gnome.org/FontViewer/
 BuildRequires:	fontconfig-devel
 BuildRequires:	freetype-devel >= 2
@@ -17,8 +17,8 @@ BuildRequires:	glib2-devel >= 1:2.56.0
 BuildRequires:	gnome-desktop4-devel >= 42
 BuildRequires:	gtk4-devel >= 4.5.0
 BuildRequires:	harfbuzz-devel >= 0.9.9
-BuildRequires:	libadwaita-devel >= 1.5
-BuildRequires:	meson >= 0.50.0
+BuildRequires:	libadwaita-devel >= 1.8
+BuildRequires:	meson >= 0.59.0
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig >= 1:0.22
 BuildRequires:	rpmbuild(macros) >= 2.042
@@ -29,7 +29,7 @@ Requires(post,postun):	gtk-update-icon-cache
 Requires:	glib2 >= 1:2.56.0
 Requires:	gtk4 >= 4.5.0
 Requires:	harfbuzz >= 0.9.9
-Requires:	libadwaita >= 1.5
+Requires:	libadwaita >= 1.8
 Provides:	gnome-utils-font-viewer = 1:%{version}-%{release}
 Obsoletes:	gnome-utils-font-viewer < 1:3.3.92-1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -75,7 +75,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/gnome-font-viewer
 %attr(755,root,root) %{_bindir}/gnome-thumbnail-font
 %{_datadir}/dbus-1/services/org.gnome.font-viewer.service
-%{_datadir}/metainfo/org.gnome.font-viewer.appdata.xml
+%{_datadir}/metainfo/org.gnome.font-viewer.metainfo.xml
 %{_datadir}/thumbnailers/gnome-font-viewer.thumbnailer
 %{_desktopdir}/org.gnome.font-viewer.desktop
 %{_iconsdir}/hicolor/scalable/apps/org.gnome.font-viewer.svg
